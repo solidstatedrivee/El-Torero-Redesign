@@ -1,0 +1,1107 @@
+/*COLOR PALLETTE*/
+$pink: rgb(174, 58, 65);
+$darkPurple: #590A21;
+$darkerPurple: #3D151F;
+$brown: #2E1817;
+$green: rgb(130, 129, 75);
+
+/*VARIABLES*/
+$devBorder: 1px solid black;
+
+/*FUNCTIONS/MIXINS*/
+@for $i from 1 through 8 {
+    .char#{$i} {
+        transform: (rotate(($i*24) + deg))
+    }
+}
+
+/*FONT STACK*/
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Montserrat|Roboto+Mono&display=swap');
+$monospace: 'Roboto Mono';
+$display: 'Comfortaa';
+$sans-serif: 'Montserrat';
+
+/*CSS RESET*/
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    // font-family: sans-serif;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    overflow-x: hidden;
+    background: rgb(85, 16, 20);
+
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*BODY*/
+
+
+/*HEADER*/
+.landingHeader {
+    // border: $devBorder;
+    width: 100%;
+    height: 100vh;
+    background: url("../images/headerbg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+
+    .headerNavigation {
+        // border: $devBorder;
+        padding-top: 25px;
+        height: 75px;
+        display: flex;
+        justify-content: space-between;
+
+        .headerSM {
+            // border: $devBorder;
+            width: 200px;
+            display: flex;
+            justify-content: space-evenly;
+            // align-items: center;
+
+            .fab {
+                // border: $devBorder;
+                color: white;
+                font-size: 2em;
+                width: 50px;
+                text-align: center;
+                transition: all 200ms ease;
+                cursor: pointer;
+            }
+
+
+
+            .fab:hover {
+                font-size: 3em;
+                // color: lighten($green, 30%);
+                color: rgb(221, 218, 33);
+
+
+
+            }
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            padding-right: 5%;
+
+            li {
+                // border: $devBorder;
+                padding: 10px;
+                color: white;
+                font-size: 1.5em;
+                z-index: 200;
+                transition: all 250ms ease;
+                text-transform: capitalize;
+                font-family: $display;
+                height: 25px;
+
+            }
+
+            li:hover {
+                color: rgb(214, 57, 68);
+                cursor: pointer;
+                border-bottom: 10px solid rgb(214, 57, 68);
+                border-radius: 5px;
+                text-shadow: 2px 2px 2px $pink;
+            }
+        }
+
+
+    }
+
+    .title {
+        // border: $devBorder;
+        text-align: center;
+        color: white;
+        font-family: monospace;
+        width: 50vw;
+        height: 50vh;
+        margin: 0 auto;
+        // font-size: 7em;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        .titleTextContainer {
+            transform: rotate(-107deg);
+            // border: $devBorder;
+            height: 50vh;
+
+            .titleText {
+                font-size: 8em;
+                height: inherit;
+                // font-family: $monospace;
+                // border: $devBorder;
+
+
+                span {
+                    // border: $devBorder;
+                    display: inline-block;
+                    height: 50vh;
+
+                    position: absolute;
+                }
+            }
+        }
+
+        .titleSubText {
+            // border: $devBorder;
+            font-size: 3em;
+            position: absolute;
+            top: 50%;
+            align-self: center;
+            font-family: $monospace;
+
+
+        }
+
+        .established {
+            // border: $devBorder;
+            font-size: 1.5em;
+            position: absolute;
+            top: 62%;
+            align-self: center;
+            font-family: $monospace;
+        }
+    }
+
+    .headerCopy {
+        // border: $devBorder;
+        position: absolute;
+        bottom: 5%;
+        ;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 75vw;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 2em;
+        color: white;
+        font-family: sans-serif;
+        padding: 25px;
+        line-height: 50px;
+        font-family: $display;
+
+        .emphasizeCopy {
+            font-size: 1.25em;
+            ;
+            background: rgba(174, 58, 65, .5);
+            // padding: 2px;
+            border-radius: 6px;
+        }
+    }
+}
+
+.landingHeader::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: rgba(130, 129, 75, .5);
+    z-index: -1;
+}
+
+/*HOURS*/
+.hours {
+    height: 50vh;
+    background: linear-gradient(to bottom right, $pink, $darkPurple);
+    padding: 20px;
+    // border: $devBorder;
+
+    h2 {
+        color: white;
+        font-size: 3em;
+        font-family: $display;
+        // border: $devBorder;
+        padding: 25px;
+        text-align: left;
+        width: 75%;
+        margin: 0 auto;
+        letter-spacing: 20px;
+        // margin: 0 auto;
+    }
+
+    .hoursContainer {
+        // border: $devBorder;
+        display: flex;
+        font-size: 2em;
+        font-family: $sans-serif;
+        justify-content: center;
+        text-align: center;
+
+        .mondayThroughThursday {
+            // border: $devBorder;
+            color: white;
+            padding: 20px;
+            border-right: 2px dotted $darkerPurple;
+
+            time {
+                font-size: 1.5em;
+                color: rgb(221, 218, 33);
+                // border: $devBorder;
+                display: inline-block;
+                padding: 12px;
+            }
+
+        }
+
+        .fridayAndSaturday {
+            // border: $devBorder;
+            color: white;
+            padding: 20px;
+
+            time {
+                font-size: 1.5em;
+                color: rgb(221, 218, 33);
+                // border: $devBorder;
+                display: inline-block;
+                padding: 12px;
+            }
+
+        }
+    }
+
+    .sunday {
+        // border: $devBorder;
+        // width: 75%;
+        text-align: center;
+        color: white;
+        font-size: 2em;
+        font-family: $sans-serif;
+        padding: 25px;
+        padding-bottom: 10px;
+
+        time {
+            font-size: 1.1em;
+            // color: $darkerPurple;
+            color: rgb(221, 218, 33);
+            // border: $devBorder;
+            display: inline-block;
+            padding: 12px;
+            // margin-bottom: 0px;
+        }
+    }
+
+    .holidayHours {
+        // border: $devBorder;
+        color: black;
+        font-family: $sans-serif;
+        // margin-top: 0px;
+        text-align: center;
+        font-size: 1.1em;
+        // margin-bottom: 10%;
+        // padding: 25px;
+        // padding-bottom: 25px;
+    }
+}
+
+/*LOCATIONS*/
+.locations {
+    // border: $devBorder;
+    background: $green;
+    display: flex;
+    flex-direction: column;
+    // height: 75vh;
+    // min-height: 40vh;
+
+    .locationsImageHeader {
+        height: 50vh;
+        // max-height: 60vh;
+        background: linear-gradient(to bottom, transparent, $green), url("../images/locationsbg.jpg");
+        background-position: center;
+        background-size: cover;
+        // background-attachment: fixed;
+        // border: $devBorder;
+    }
+
+    .locationsTextHeader {
+        color: white;
+        font-size: 3em;
+        font-family: $display;
+        // border: $devBorder;
+        padding: 25px;
+        text-align: left;
+        width: 75%;
+        letter-spacing: 20px;
+        margin: 0 auto;
+    }
+
+    .eachLocation {
+        // border: $devBorder;
+        padding: 37px;
+        margin: 0 auto;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 5px;
+
+        .locationCard {
+            // border: 1px solid $darkerPurple;
+            // padding: 25px;
+            border: 0px solid transparent;
+            text-align: center;
+            background: rgb(221, 218, 33);
+            border-radius: 5px;
+            transition: all 200ms ease;
+            box-shadow: 5px 5px 10px rgb(97, 96, 53);
+            opacity: .75;
+
+            .locationImage {
+                // background: url("../images/chambleelocation.jpg");
+                width: 100%;
+                height: 300px;
+
+                // border: $devBorder;
+                // border-radius: 5px;
+                position: relative;
+
+            }
+
+            .image1 {
+                background: url(../images/chambleelocation.jpg);
+                background-position: center;
+                background-size: cover;
+            }
+
+            .image2 {
+                background: url(../images/duluthlocation.jpg);
+                background-position: center;
+                background-size: cover;
+            }
+
+            .image3 {
+                background: url(../images/stonemountainlocation.jpg);
+                background-position: center;
+                background-size: cover;
+            }
+
+            .image4 {
+                background: url(../images/roswelllocation.JPG);
+                background-position: center;
+                background-size: cover;
+            }
+
+            .locationImage:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(255, 251, 0, .5);
+                mix-blend-mode: multiply;
+            }
+
+
+
+            .locationCardHeader {
+                color: rgb(214, 57, 68);
+                font-family: $display;
+                font-size: 2.25em;
+                background: rgb(190, 188, 61);
+                // border: $devBorder;
+                // width: 100%;
+                padding: 20px;
+            }
+
+            address {
+                // border: $devBorder;
+                color: $pink;
+                font-family: $sans-serif;
+                font-size: 1em;
+                padding: 5px;
+                transition: all 200ms ease;
+            }
+
+            address:hover {
+                cursor: pointer;
+                color: $darkPurple;
+                text-decoration: underline;
+            }
+
+            p:first-of-type {
+                // border: $devBorder;
+                color: $darkPurple;
+                font-family: $sans-serif;
+                font-size: 1.5em;
+                padding: 5px;
+            }
+
+            .phoneNumber {
+                // border: $devBorder;
+                color: black;
+                font-family: $sans-serif;
+                font-size: 1.25em;
+                padding: 15px;
+                padding-left: 0px;
+                background: rgb(221, 218, 33);
+                transition: all 200ms ease;
+                display: inline-block;
+                // width: 100%;
+            }
+
+            .fa-phone-alt {
+                // border: $devBorder;
+                color: rgb(214, 57, 68);
+                font-size: 1.25em;
+
+            }
+
+            .phoneNumber:hover {
+                cursor: pointer;
+                color: rgb(214, 57, 68);
+            }
+        }
+
+        .locationCard:hover {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+    }
+}
+
+/*MENU*/
+.menu {
+    // height: 75vh;
+    background: rgb(221, 218, 33);
+    // border: $devBorder;
+    // padding: 15px;
+
+    .easingGradient {
+        width: 100%;
+        height: 150px;
+        // border: $devBorder;
+        background: linear-gradient(to bottom, $green, rgb(221, 218, 33));
+    }
+
+    .menuTextHeader {
+        // border: $devBorder;
+        color: white;
+        font-size: 3em;
+        font-family: $display;
+        // border: $devBorder;
+        padding: 25px;
+        text-align: left;
+        width: 75%;
+        letter-spacing: 20px;
+        margin: 0 auto;
+
+    }
+
+    .aLaCarte {
+        // border: $devBorder;
+        width: 75%;
+        margin: 0 auto;
+
+        h3 {
+            // border: $devBorder;
+            text-transform: uppercase;
+            color: rgb(214, 57, 68);
+            font-family: $sans-serif;
+            font-size: 2em;
+            padding: 12px;
+        }
+
+        .menuItemsContainer {
+            border-bottom: 2px dotted black;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            color: rgb(78, 14, 18);
+            font-family: $sans-serif;
+            padding: 10px;
+            font-size: 1.5em;
+            // grid-template-areas: 
+            // "column1 column2";
+
+            .column1 {
+                // border: $devBorder;
+            }
+
+            .column2 {
+                // border: $devBorder;
+            }
+
+            small {
+                font-size: .75em;
+                text-align: left;
+                // border: $devBorder;
+                display: inline-block;
+                width: 75%;
+                margin: 0 auto;
+                color: rgb(138, 46, 52);
+                padding: 0 15px 15px 15px;
+                // margin: 0;
+
+            }
+
+            p {
+                // border: $devBorder;
+                padding: 6px;
+                // margin: 0;
+            }
+
+        }
+
+        small {
+            font-size: 1em;
+            text-align: left;
+            // border: $devBorder;
+            display: inline-block;
+            width: 75%;
+            margin: 0 auto;
+            color: rgb(138, 46, 52);
+            padding-left: 15px;
+            // margin-top: 0;
+            font-family: $sans-serif;
+        }
+
+        .dessert .menuItemsContainer {
+            border: none;
+        }
+    }
+
+    .menuImage {
+        background: linear-gradient(to bottom, rgb(221, 218, 33), transparent), url("../images/menubg2.jpg");
+        height: 75vh;
+        background-position: bottom;
+        background-size: cover;
+
+    }
+}
+
+/* IMAGE SLIDER */
+.imageSlider {
+    // border: $devBorder;
+    width: 100vw;
+    height: 75vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+    .previous {
+        // border: $devBorder;
+        font-family: $display;
+        font-size: 3em;
+        width: 12vw;
+        text-align: center;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgb(85, 16, 20);
+        color: rgb(214, 57, 68);
+        transition: all 200ms ease;
+    }
+
+    .previous:hover {
+        cursor: pointer;
+        color: white;
+        font-size: 4em;
+    }
+
+    .previous:active {
+        color: rgb(221, 218, 33);
+    }
+
+    .next {
+        // border: $devBorder;
+        font-family: $display;
+        font-size: 3em;
+        width: 12vw;
+        text-align: center;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgb(85, 16, 20);
+        color: rgb(214, 57, 68);
+        transition: all 200ms ease;
+    }
+
+    .next:hover {
+        cursor: pointer;
+        color: white;
+        font-size: 4em;
+    }
+
+    .next:active {
+        color: rgb(221, 218, 33);
+    }
+
+    .image {
+        // border: $devBorder;
+        // padding: 10px;
+        // border: none;
+        width: 75vw;
+        height: 100%;
+        background: rgb(85, 16, 20);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        // background: rgb(85, 16, 20);
+
+    }
+}
+
+// FOOTER
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 100vh;
+    // border: $devBorder;
+    background: linear-gradient(to bottom, rgb(85, 16, 20), transparent), url("../images/footerbg.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    // padding-bottom: 5em;
+    z-index: 0;
+
+    .footerContentContainer {
+        z-index: 2;
+        // border: $devBorder;
+        // display: flex;
+        width: 75%;
+        padding-bottom: 25vh;
+        // justify-content: space-between;
+        // display: block;
+
+        .navContainer {
+            // border: $devBorder;
+            display: flex;
+            justify-content: space-between;
+
+            .footerSM {
+                // border: $devBorder;
+                color: white;
+                font-size: 3em;
+
+                .fab {
+                    // border: $devBorder;
+                    padding: 20px;
+                    transition: all 200ms ease;
+                }
+
+                .fab:hover {
+                    color: rgb(221, 218, 33);
+                    transform: scale(1.5);
+                    cursor: pointer;
+                }
+            }
+
+            .footerSM:hover {}
+
+            .footerNav {
+                // border: $devBorder;
+
+                ul {
+                    display: flex;
+                    color: white;
+                    font-family: $sans-serif;
+                    font-size: 2em;
+                    text-transform: lowercase;
+
+                    li {
+                        // border: $devBorder;
+                        padding: 10px;
+                        transition: all 200ms ease;
+                    }
+
+                    li:hover {
+                        color: rgb(221, 218, 33);
+                        cursor: pointer;
+                        border-bottom: 10px solid rgb(221, 218, 33);
+                        border-radius: 5px;
+                        text-shadow: 2px 2px 2px rgb(88, 87, 15);
+                    }
+                }
+            }
+        }
+
+        .footerText {
+            // border: $devBorder;
+            width: 75%;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 50px;
+            color: white;
+            font-family: $sans-serif;
+            font-size: .75em;
+
+            p {
+                // border: $devBorder;
+                padding: 5px;
+            }
+
+            .heart {
+                // animation: 200ms infinite beatingHeart;
+                display: inline-block;
+                animation-iteration-count: infinite;
+                animation-duration: 1s;
+                animation-name: beatingHeart;
+                animation-direction: alternate;
+                // border: $devBorder;
+            }
+
+            @keyframes beatingHeart {
+                0% {
+                    transform: scale(1);
+                }
+
+                25% {
+                    transform: scale(1.25);
+                }
+
+                40% {
+                    transform: scale(1);
+                }
+
+                60% {
+                    transform: scale(1.25);
+                }
+
+                100% {
+                    transform: scale(1);
+                }
+            }
+        }
+
+
+
+
+    }
+
+}
+
+.footer:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(85, 16, 20, .5);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+// MEDIA QUERIES
+@media only screen and (max-width: 1300px) {
+
+    .eachLocation {
+        // border: $devBorder;
+        flex-flow: wrap;
+        justify-content: center !important;
+
+        .locationCard {
+            // border: $devBorder !important;
+            margin: 20px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .titleSubText {
+        // border: $devBorder;
+        font-size: 2em !important;
+    }
+
+    .established {
+        font-size: 1em !important;
+    }
+
+    .headerNavigation {
+        // border: $devBorder;
+        justify-content: flex-start !important;
+
+        ul {
+            // border: $devBorder;
+
+            li {
+                font-size: 1em !important;
+            }
+        }
+
+        .headerSM {
+            font-size: .75em !important;
+            // border: $devBorder;
+            align-self: center;
+            height: 50px;
+        }
+    }
+
+    .sunday {
+        // border: $devBorder;
+        padding-bottom: 10px !important;
+
+        time {
+            // border: $devBorder;
+            font-size: .75em !important;
+            margin-bottom: 0 !important;
+        }
+
+    }
+
+    .holidayHours {
+        // border: $devBorder;
+        margin-top: 0 !important;
+    }
+
+
+    .footer {
+        height: 75vh !important;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .navContainer {
+        // border: $devBorder;
+        flex-direction: column;
+        align-items: center;
+        // height: 200px;
+
+        .footerNav {
+            ul {
+                li:hover {
+                    border: none !important;
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 930px) {
+    .hours {
+        // border: $devBorder;
+
+        h2 {
+            // border: $devBorder;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        .hoursContainer {
+            // border: $devBorder;
+            font-size: 1.5em !important;
+        }
+
+        .sunday {
+            // border: $devBorder;
+            font-size: 1.5em !important;
+        }
+    }
+
+    .aLaCarte {
+        // border: $devBorder;
+        width: 100% !important;
+
+        .menuItemsContainer {
+            // border: $devBorder;
+            // width: 100vw !important;
+            grid-gap: 50px !important;
+            border: none !important;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 825px) {
+    .headerCopy {
+        // border: $devBorder;
+        font-size: 1.5em !important;
+    }
+
+    .headerNavigation {
+        // border: $devBorder;
+        justify-content: center !important;
+    }
+
+    .titleSubText {
+        // border: $devBorder;
+        width: 100vw;
+        padding: 20px;
+    }
+
+    .established {
+        // border: $devBorder;
+        top: 72% !important;
+    }
+
+    .headerCopy {
+        // border: $devBorder;
+    }
+
+    .hours {
+        h2 {
+            // border: $devBorder;
+            width: 100%;
+            // margin: 0 auto !important;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 715px) {
+    .headerCopy {
+        line-height: 40px !important;
+    }
+
+    .headerNavigation {
+        // border: $devBorder;
+        flex-direction: column;
+        justify-content: flex-start !important;
+        align-items: center;
+        height: 15vh !important;
+    }
+
+    .hours {
+        h2 {
+            // border: $devBorder;
+            font-size: 1.5em;
+        }
+    }
+
+    .holidayHours {
+        // border: $devBorder;
+        font-size: .75em !important;
+    }
+
+    .headerCopy {
+        // border: $devBorder;
+        bottom: 0% !important;
+    }
+
+
+}
+
+@media only screen and (max-width: 660px) {
+    .hours {
+        h2 {
+            // border: $devBorder;
+            width: 100%;
+            // margin: 0 auto !important;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 640px) {
+    .hoursContainer {
+        // border: $devBorder !important;
+        // border: none;
+        flex-direction: column;
+        // font-size: .5em !important;
+
+        .mondayThroughThursday {
+            // border: $devBorder;
+            font-size: .75em !important;
+            border-right: none !important;
+            border-bottom: 1px dotted black;
+
+
+        }
+
+        .fridayAndSaturday {
+            font-size: .75em !important;
+        }
+
+    }
+
+    .sunday {
+        // border: $devBorder !important;
+        padding: 0 !important;
+
+        p {
+            font-size: .75em !important;
+
+        }
+
+        time {
+            font-size: .5em !important;
+            // border: $devBorder;
+            // width: 100% !important;
+
+        }
+    }
+
+    .footerText {
+        // border: $devBorder;
+        width: 100% !important;
+        text-align: left !important;
+        // margin: 0px !important;
+
+        p:nth-of-type(2) {
+            // border: $devBorder;
+            // margin-left: 0 !important;
+        }
+    }
+
+    .imageSlider {
+        padding: 0 !important;
+
+    }
+
+}
+
+@media only screen and (max-width: 620px) {
+    .headerCopy {
+        // border: $devBorder;
+        padding: 0px !important;
+    }
+}
